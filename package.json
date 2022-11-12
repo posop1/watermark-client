@@ -13,6 +13,7 @@
     "sass": "^1.56.1"
   },
   "devDependencies": {
+    "@posop/prettier-config": "^1.4.2",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
