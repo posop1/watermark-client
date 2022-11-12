@@ -1,39 +1,32 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState } from 'react'
 import s from './styles/app.module.scss'
 
 const App = () => {
-  const OnSumbit = (event: React.ChangeEvent<HTMLFormElement>) => {
+  const [file, setFile] = useState(null)
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
-
-    const formData = {
-      image: new FormData(event.target.form)
-    }
-    console.log(formData)
-
-    axios
-      .post('http://127.0.0.1:8000/fill/', formData)
-      .then((res) => {
-        console.log(`Success` + res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    const formData = new FormData()
+    formData.append('avatar', file)
+    return await axios.post('http://127.0.0.1:8000/center/', formData, {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
   }
 
   return (
     <div className={s.app}>
       <h1>TEST</h1>
       <form
-        onSubmit={OnSumbit}
+        onSubmit={handleSubmit}
         className={s.form}
       >
         <input
-          accept="image/jpeg"
-          id="contained-button-content"
-          name="customFile"
           type="file"
           className={s.input}
+          onChange={(e) => setFile(e.target.files[0])}
         />
         <button className={s.btn}>Sub</button>
       </form>
