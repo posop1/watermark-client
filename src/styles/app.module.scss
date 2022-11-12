@@ -1,0 +1,42 @@
+// 5c5c5c
+// eaeaea
+
+.app {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #eaeaea;
+}
+.form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  margin-bottom: 15px;
+  font-size: 15px;
+  border: none;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.btn {
+  font-family: 'Roboto', sans-serif;
+  background: none;
+  outline: none;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  color: #5c5c5c;
+  background: #eaeaea;
+  padding: 5px 0;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: #eaeaea;
+    background: #080808;
+  }
+}
