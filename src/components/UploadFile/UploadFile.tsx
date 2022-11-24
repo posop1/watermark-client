@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const url = 'http://127.0.0.1:8000/center/'
+const url = 'https://pvasily-watermark.herokuapp.com/centre'
 
 const UploadFile = () => {
   const [selectedFile, setSelectedFile] = useState(null)
